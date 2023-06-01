@@ -19,8 +19,8 @@ export default function LoginComponent() {
     console.log(event.target.value);
   }
 
-  function handleSubmit() {
-    if (authContext.login(username, password)) {
+  async function handleSubmit() {
+    if (await authContext.login(username, password)) {
       setShowErrorMessage(false);
       navigate(`/welcome/${username}`);
     } else setShowErrorMessage(true);

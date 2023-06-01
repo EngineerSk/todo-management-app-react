@@ -4,6 +4,7 @@ import { useAuth } from "./security/AuthContext.js";
 function HeaderComponent() {
   const authContext = useAuth();
   const isAuthenticated = authContext.isAuthenticated;
+  const username = authContext.username;
 
   function logout() {
     authContext.logout();
@@ -24,7 +25,7 @@ function HeaderComponent() {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   {isAuthenticated && (
-                    <Link className="nav-link" to="/welcome/Oriade">
+                    <Link className="nav-link" to={`/welcome/${username}`}>
                       Home
                     </Link>
                   )}
