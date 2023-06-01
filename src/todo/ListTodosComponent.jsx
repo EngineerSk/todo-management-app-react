@@ -52,7 +52,7 @@ function ListTodosComponent() {
 
   useEffect(() => {
     refreshTodos();
-  }, []);
+  });
 
   const deleteTodo = (id) => {
     deleteTodoForUsername(username, id)
